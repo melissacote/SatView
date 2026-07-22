@@ -1,0 +1,22 @@
+sites:
+  - name: Home
+    latitude: 40.7580
+    longitude: -73.9855
+    elevation_m: 10
+  - name: Denver
+    latitude: 39.7392
+    longitude: -104.9903
+    elevation_m: 1609
+
+satellites:
+  - norad_id: 25544   # ISS
+  - norad_id: 20580   # Hubble Space Telescope
+
+search:
+  start: now   # "now" or an ISO8601 timestamp, e.g. "2026-07-23T00:00:00Z"
+  hours: 48
+
+elevation_mask_deg: 0
+
+output:
+  path: passes.csv   # format inferred from extension (.csv or .json); or set 'format' explicitly

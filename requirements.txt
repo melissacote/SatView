@@ -1,0 +1,5 @@
+skyfield==1.54
+timezonefinder==8.2.5
+tzdata==2026.3
+pyyaml==6.0.3
+pytest==9.1.1
