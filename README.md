@@ -2,8 +2,9 @@
 
 Predicts when satellites will be visible from one or more ground locations. For
 each configured NORAD ID and site, it reports rise/peak/set times with
-azimuth and elevation, whether the pass is actually optically visible (sunlit
-satellite + dark sky), and an estimated peak visual magnitude.
+azimuth, elevation, and ground-to-satellite range, whether the pass is
+actually optically visible (sunlit satellite + dark sky), and an estimated
+peak visual magnitude.
 
 ## Setup
 
