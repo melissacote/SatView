@@ -16,12 +16,15 @@ def make_pass(optically_visible=True, peak_magnitude=-3.9):
         "rise_time": ts.utc(2026, 7, 22, 21, 46, 50),
         "rise_el": 0.0,
         "rise_az": 308.0,
+        "rise_range_km": 2223.4,
         "peak_time": ts.utc(2026, 7, 22, 21, 52, 20),
         "peak_el": 60.4,
         "peak_az": 33.6,
+        "peak_range_km": 423.1,
         "set_time": ts.utc(2026, 7, 22, 21, 57, 47),
         "set_el": -0.0,
         "set_az": 118.9,
+        "set_range_km": 2201.7,
         "optically_visible": optically_visible,
     }
     if optically_visible:
@@ -38,6 +41,9 @@ def test_build_record_visible_pass_has_expected_fields():
     assert record["satellite_name"] == "ISS (ZARYA)"
     assert record["norad_id"] == 25544
     assert record["peak_el_deg"] == 60.4
+    assert record["rise_range_km"] == 2223.4
+    assert record["peak_range_km"] == 423.1
+    assert record["set_range_km"] == 2201.7
     assert record["optically_visible"] is True
     assert record["optical_rise_time_local"] is not None
     assert record["peak_magnitude"] == -3.9

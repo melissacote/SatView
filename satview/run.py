@@ -26,9 +26,9 @@ def parse_start_time(value, ts):
 
 
 def print_pass(p, tz, indent="  "):
-    print(f"{indent}  Rise:  {fmt(p['rise_time'], tz)}  el {p['rise_el']:5.1f}deg  az {p['rise_az']:6.1f}deg")
-    print(f"{indent}  Peak:  {fmt(p['peak_time'], tz)}  el {p['peak_el']:5.1f}deg  az {p['peak_az']:6.1f}deg")
-    print(f"{indent}  Set:   {fmt(p['set_time'], tz)}  el {p['set_el']:5.1f}deg  az {p['set_az']:6.1f}deg")
+    print(f"{indent}  Rise:  {fmt(p['rise_time'], tz)}  el {p['rise_el']:5.1f}deg  az {p['rise_az']:6.1f}deg  range {p['rise_range_km']:7.1f}km")
+    print(f"{indent}  Peak:  {fmt(p['peak_time'], tz)}  el {p['peak_el']:5.1f}deg  az {p['peak_az']:6.1f}deg  range {p['peak_range_km']:7.1f}km")
+    print(f"{indent}  Set:   {fmt(p['set_time'], tz)}  el {p['set_el']:5.1f}deg  az {p['set_az']:6.1f}deg  range {p['set_range_km']:7.1f}km")
     if p["optically_visible"]:
         mag = p["peak_magnitude"]
         mag_str = f"{mag:.1f}" if mag is not None else "N/A (no catalog data)"

@@ -10,16 +10,17 @@ def find_passes(satellite, latitude_deg, longitude_deg, elevation_m, t0, t1, ele
     passes = []
     current = None
     for t, event in zip(times, events):
-        alt, az, _ = difference.at(t).altaz()
+        alt, az, distance = difference.at(t).altaz()
 
         if event == 0:
-            current = {"rise_time": t, "rise_az": az.degrees, "rise_el": alt.degrees}
+            current = {"rise_time": t, "rise_az": az.degrees, "rise_el": alt.degrees, "rise_range_km": distance.km}
         elif event == 1:
             if current is None:
                 continue
             current["peak_time"] = t
             current["peak_az"] = az.degrees
             current["peak_el"] = alt.degrees
+            current["peak_range_km"] = distance.km
         elif event == 2:
             if current is None or "peak_time" not in current:
                 current = None
@@ -27,6 +28,7 @@ def find_passes(satellite, latitude_deg, longitude_deg, elevation_m, t0, t1, ele
             current["set_time"] = t
             current["set_az"] = az.degrees
             current["set_el"] = alt.degrees
+            current["set_range_km"] = distance.km
             passes.append(current)
             current = None
 
