@@ -5,4 +5,5 @@ cache/
 *.csv
 *.json
 !config*.json
+config.yaml
 .pytest_cache/
