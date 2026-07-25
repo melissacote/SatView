@@ -1,4 +1,4 @@
-# satview
+# SatView
 
 Predicts when satellites will be visible from one or more ground locations. For
 each configured NORAD ID and site, it reports rise/peak/set times with
