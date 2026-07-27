@@ -41,8 +41,16 @@ these instead, which activate it and run in one line:
 
 ```powershell
 # Windows PowerShell
-.venv\Scripts\Activate.ps1; python -m satview.run your_config.yaml
+.venv\Scripts\python.exe -m satview.run your_config.yaml
 ```
+
+(Calling the venv's `python.exe` directly has the same effect as activating
+and works even when PowerShell's script execution policy is `Restricted` —
+the default on many machines, which blocks `Activate.ps1` from running at
+all. If you'd rather actually activate it in PowerShell, run
+`.venv\Scripts\Activate.ps1` first and, if that errors, allow scripts for
+just that process with
+`Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass`.)
 
 ```bat
 :: Windows cmd.exe
