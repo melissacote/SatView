@@ -36,6 +36,27 @@ manual step needed.
 python -m satview.run your_config.yaml
 ```
 
+If your shell session doesn't already have `.venv` activated, use one of
+these instead, which activate it and run in one line:
+
+```powershell
+# Windows PowerShell
+.venv\Scripts\Activate.ps1; python -m satview.run your_config.yaml
+```
+
+```bat
+:: Windows cmd.exe
+.venv\Scripts\activate.bat && python -m satview.run your_config.yaml
+```
+
+```bash
+# Git Bash on Windows
+source .venv/Scripts/activate && python -m satview.run your_config.yaml
+
+# macOS/Linux
+source .venv/bin/activate && python -m satview.run your_config.yaml
+```
+
 This prints a per-site, per-satellite pass table to the console. If the
 config has an `output` section, it also writes the same data to a CSV or
 JSON file.
